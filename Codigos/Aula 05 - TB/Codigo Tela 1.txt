@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+   // remove a faixa debug do app
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false, // Remove a faixa debug do app
+      title: 'Flutter Demo',
+      theme: ThemeData(
+               colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        useMaterial3: true,
+      ),
+      home:            
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly, // alinhamento vertical
+              crossAxisAlignment: CrossAxisAlignment.center, // alinhamento horizontal
+              children:[ // herança 
+              Stack(
+                alignment: AlignmentDirectional.center, // alinhamento do empilhamento
+                children: [
+                  Container(color:Colors.red, width:100,height:100),
+                  Container(color:Colors.blue,width:50, height:50),
+                ],),
+                Stack(
+                  alignment: AlignmentDirectional.center, // alinhamento do empilhamento
+                children: [
+                  Container(color:Colors.red, width:100,height:100),
+                  Container(color:Colors.blue,width:50, height:50),
+              ]),
+      Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Container(color:Colors.blue, height:50,width:50),
+        Container(color:Colors.green, height:50,width:50),
+        Container(color:Colors.red, height:50,width:50),
+      ],
+    
+     )
+              ], // children 1                          
+            
+     ), 
+     
+     );
+  }  
+  }
+
+

@@ -1,0 +1,11 @@
+git remote add origin git@github.com:danielvieira95/projetosflutter2023.git
+git branch -M master
+git push -u origin master
+echo "# projetosflutter2023" >> README.md
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin git@github.com:danielvieira95/projetosflutter2023.git
+git push -u origin master
