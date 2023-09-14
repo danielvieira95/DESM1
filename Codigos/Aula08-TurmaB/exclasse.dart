@@ -1,7 +1,7 @@
 // Criar classe chamada casa
 class Casa {
   String? cor; // Atributo cor
-  double? valor;
+  double valor = 0;
 
 // criar metodos
   void abrirJanela(int qtde_janelas) {
@@ -30,5 +30,5 @@ void main() {
   imovel1.cor = "Vermelho";
   print(imovel1.cor);
   imovel1.valor = 550.000;
-  print("O valor do imovel 1 é R\$  ${imovel1.valor} ");
+  print("O valor do imovel 1 é R\$  ${imovel1.valor.toStringAsFixed(3)} ");
 }
