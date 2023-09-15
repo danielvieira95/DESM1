@@ -1,11 +1,18 @@
-class Fruta {
+// Classe pai
+class Alimento {
   String sabor;
   String nome;
   String cor;
   double peso;
+  Alimento(this.sabor, this.nome, this.cor, this.peso);
+}
+
+class Fruta extends Alimento {
   int diasdesdecolheita;
   // Cria o construtor
-  Fruta(this.sabor, this.nome, this.cor, this.peso, this.diasdesdecolheita);
+  Fruta(String sabor, String nome, String cor, double peso,
+      this.diasdesdecolheita)
+      : super(sabor, nome, cor, peso);
 
 // Cria os métodos
   void estaMadura(int qtde_dias) {
@@ -39,4 +46,6 @@ void main() {
   Legumes Beterraba =
       Legumes("Amargo", "Beterraba", "Roxo", 50, isprecisaCozinhar: true);
   Beterraba.precisaCozinhar(false);
+  Fruta uva = Fruta("Doce", "Uva", "Roxa", 100, 30);
+  uva.estaMadura(20);
 }
