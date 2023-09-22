@@ -6,3 +6,7 @@ https://docs.google.com/forms/d/1IIcWTjrrz28Ax1dE30OWfgyauxxOXpzYGPjs7sPDm8k/edi
 
 Atividade 3 - Herança e Construtor
 https://docs.google.com/forms/d/10EDvEQEc5RWCj6anJtwy7VHhbNOjKbgJyHDOnOhucRI/edit
+
+Atividade 4 - Classe abstrata, getter e setter
+
+https://docs.google.com/forms/d/159tsKuzLJWmbKr7HNf9V-D5MJf77wlUBodUu6HU54Vc/edit
