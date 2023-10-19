@@ -30,7 +30,8 @@ class MyApp extends StatelessWidget {
 
 class Task extends StatelessWidget {
   final String tarefa;
-  const Task(this.tarefa, {super.key});
+  final String img;
+  const Task(this.tarefa, this.img, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +46,15 @@ class Task extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(color: Colors.grey, height: 100, width: 80),
+                Container(
+                  color: Colors.grey,
+                  height: 100,
+                  width: 80,
+                  child: Image.network(
+                    img,
+                    fit: BoxFit.fill,
+                  ),
+                ),
                 Text(
                   tarefa,
                   style: TextStyle(fontSize: 22),
