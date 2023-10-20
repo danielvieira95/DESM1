@@ -17,5 +17,8 @@ https://docs.google.com/forms/d/1mV0qg-XShIwoG3kYN0VnVyO2T0kGKo60MKxzy86Jh00/edi
 Atividade 6 - Aplicativos Flutter Scaffold, ListView, Containers
 https://docs.google.com/forms/d/1mV0qg-XShIwoG3kYN0VnVyO2T0kGKo60MKxzy86Jh00/edit
 
+Atividade 7 - Aplicativos Flutter Scaffold, Statefull Widget, Campo texto
+
+
 
 
