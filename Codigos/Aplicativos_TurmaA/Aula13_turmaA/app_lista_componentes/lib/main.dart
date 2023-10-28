@@ -31,7 +31,7 @@ class ListaComponente extends StatelessWidget {
       children: [
         Stack(children: [
           Container(
-            color: const Color.fromARGB(255, 121, 68, 255),
+            color: Colors.transparent,
             width: 400,
             height: 150,
           ),
