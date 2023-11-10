@@ -15,7 +15,9 @@ class Home extends StatelessWidget {
             title: Text("App Lista de componentes Compra"),
           ),
           body: Column(
-            children: [],
+            children: [
+              Componente(),
+            ],
           )),
     );
   }
@@ -29,6 +31,16 @@ class Componente extends StatefulWidget {
 }
 
 class _ComponenteState extends State<Componente> {
+  String? mensagem;
+  // _ funçao publica
+  void _printmsg() {
+    // set state monitora o estado da variavel
+// da classe statefull
+    setState(() {
+      mensagem = "Mobile";
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -61,7 +73,12 @@ class _ComponenteState extends State<Componente> {
                   child: Icon(Icons.add)),
             ],
           ),
-          Container(color: Colors.red, width: 300, height: 250),
+          Container(
+            color: Colors.red,
+            width: 300,
+            height: 250,
+            child: Text("$mensagem"),
+          ),
         ],
       ),
     );
