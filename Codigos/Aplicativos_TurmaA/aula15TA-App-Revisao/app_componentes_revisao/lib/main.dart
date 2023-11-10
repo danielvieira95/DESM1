@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
           ),
           body: Column(
             children: [
-              Componente(),
+              Componente("Resistor"),
             ],
           )),
     );
@@ -24,7 +24,9 @@ class Home extends StatelessWidget {
 }
 
 class Componente extends StatefulWidget {
-  const Componente({super.key});
+  final String nome_c; // final antes do tipo da variavel
+  // protege contra alteração acidental
+  Componente(this.nome_c, {super.key});
 
   @override
   State<Componente> createState() => _ComponenteState();
@@ -53,7 +55,8 @@ class _ComponenteState extends State<Componente> {
             width: 300,
             height: 250,
             child: Text(
-              "Componente",
+              "${widget.nome_c}", // chama a variavel de fora
+              // da classe
               style: TextStyle(fontSize: 30),
               textAlign: TextAlign.center,
             ),
@@ -61,11 +64,7 @@ class _ComponenteState extends State<Componente> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(
-                  onPressed: () {
-                    print("Botão pressionado");
-                  },
-                  child: Text("Mensagem")),
+              ElevatedButton(onPressed: _printmsg, child: Text("Mensagem")),
               ElevatedButton(
                   onPressed: () {
                     print("Cont ++");
@@ -77,7 +76,11 @@ class _ComponenteState extends State<Componente> {
             color: Colors.red,
             width: 300,
             height: 250,
-            child: Text("$mensagem"),
+            child: Text(
+              "$mensagem",
+              style: TextStyle(fontSize: 30),
+              textAlign: TextAlign.center,
+            ),
           ),
         ],
       ),
