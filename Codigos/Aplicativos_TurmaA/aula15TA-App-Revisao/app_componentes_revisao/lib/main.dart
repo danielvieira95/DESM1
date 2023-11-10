@@ -54,17 +54,25 @@ class _ComponenteState extends State<Componente> {
             color: Colors.blue,
             width: 300,
             height: 250,
-            child: Text(
-              "${widget.nome_c}", // chama a variavel de fora
-              // da classe
-              style: TextStyle(fontSize: 30),
-              textAlign: TextAlign.center,
-            ),
+            child: Image.asset(""),
+          ),
+          Text(
+            "${widget.nome_c}",
+            style: TextStyle(fontSize: 30),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(onPressed: _printmsg, child: Text("Mensagem")),
+              Container(
+                color: Colors.red,
+                width: 300,
+                height: 80,
+                child: Text(
+                  "QTDE:",
+                  style: TextStyle(fontSize: 30),
+                  textAlign: TextAlign.start,
+                ),
+              ),
               ElevatedButton(
                   onPressed: () {
                     print("Cont ++");
@@ -72,16 +80,7 @@ class _ComponenteState extends State<Componente> {
                   child: Icon(Icons.add)),
             ],
           ),
-          Container(
-            color: Colors.red,
-            width: 300,
-            height: 250,
-            child: Text(
-              "$mensagem",
-              style: TextStyle(fontSize: 30),
-              textAlign: TextAlign.center,
-            ),
-          ),
+          ElevatedButton(onPressed: _printmsg, child: Text("Mensagem")),
         ],
       ),
     );
