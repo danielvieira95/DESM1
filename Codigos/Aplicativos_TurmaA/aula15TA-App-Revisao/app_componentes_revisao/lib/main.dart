@@ -29,11 +29,21 @@ class Home extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              ElevatedButton(
-                  onPressed: () {
-                    print("Botão pressionado");
-                  },
-                  child: Text("Mensagem")),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  ElevatedButton(
+                      onPressed: () {
+                        print("Botão pressionado");
+                      },
+                      child: Text("Mensagem")),
+                  ElevatedButton(
+                      onPressed: () {
+                        print("Cont ++");
+                      },
+                      child: Icon(Icons.add)),
+                ],
+              ),
               Container(color: Colors.red, width: 300, height: 250),
             ],
           ),
