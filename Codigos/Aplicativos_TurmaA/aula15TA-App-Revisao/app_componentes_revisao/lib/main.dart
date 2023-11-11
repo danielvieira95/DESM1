@@ -10,13 +10,15 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
             title: Text("App Lista de componentes Compra"),
           ),
-          body: Column(
+          body: ListView(
             children: [
               Componente("Resistor", 2, "imagens/resistor.jpg"),
+              Componente("Led", 3, "imagens/led.jpg"),
             ],
           )),
     );
@@ -70,7 +72,10 @@ class _ComponenteState extends State<Componente> {
             color: Colors.blue,
             width: 300,
             height: 250,
-            child: Image.asset(widget.img),
+            child: Image.asset(
+              widget.img,
+              fit: BoxFit.fill,
+            ),
           ),
           Text(
             "${widget.nome_c}",
