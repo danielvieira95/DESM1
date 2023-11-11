@@ -34,12 +34,19 @@ class Componente extends StatefulWidget {
 
 class _ComponenteState extends State<Componente> {
   String? mensagem;
+  int qtde = 0;
   // _ funçao publica
   void _printmsg() {
     // set state monitora o estado da variavel
 // da classe statefull
     setState(() {
       mensagem = "Mobile";
+    });
+  }
+
+  void _incqtde() {
+    setState(() {
+      qtde++;
     });
   }
 
@@ -68,16 +75,12 @@ class _ComponenteState extends State<Componente> {
                 width: 300,
                 height: 80,
                 child: Text(
-                  "QTDE:",
+                  "QTDE: $qtde",
                   style: TextStyle(fontSize: 30),
                   textAlign: TextAlign.start,
                 ),
               ),
-              ElevatedButton(
-                  onPressed: () {
-                    print("Cont ++");
-                  },
-                  child: Icon(Icons.add)),
+              ElevatedButton(onPressed: _incqtde, child: Icon(Icons.add)),
             ],
           ),
           ElevatedButton(onPressed: _printmsg, child: Text("Mensagem")),
