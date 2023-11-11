@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
           ),
           body: Column(
             children: [
-              Componente("Resistor", 2),
+              Componente("Resistor", 2, "imagens/resistor.jpg"),
             ],
           )),
     );
@@ -25,9 +25,10 @@ class Home extends StatelessWidget {
 
 class Componente extends StatefulWidget {
   final String nome_c;
+  final String img;
   int vc; // final antes do tipo da variavel
   // protege contra alteração acidental
-  Componente(this.nome_c, this.vc, {super.key});
+  Componente(this.nome_c, this.vc, this.img, {super.key});
 
   @override
   State<Componente> createState() => _ComponenteState();
@@ -69,7 +70,7 @@ class _ComponenteState extends State<Componente> {
             color: Colors.blue,
             width: 300,
             height: 250,
-            child: Image.asset(""),
+            child: Image.asset(widget.img),
           ),
           Text(
             "${widget.nome_c}",
