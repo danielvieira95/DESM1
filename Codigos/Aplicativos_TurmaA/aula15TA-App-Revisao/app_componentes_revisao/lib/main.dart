@@ -35,6 +35,7 @@ class Componente extends StatefulWidget {
 class _ComponenteState extends State<Componente> {
   String? mensagem;
   int qtde = 0;
+  int valor_total = 0;
   // _ funçao publica
   void _printmsg() {
     // set state monitora o estado da variavel
@@ -68,20 +69,34 @@ class _ComponenteState extends State<Componente> {
             style: TextStyle(fontSize: 30),
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                color: Colors.red,
-                width: 300,
-                height: 80,
-                child: Text(
-                  "QTDE: $qtde",
-                  style: TextStyle(fontSize: 30),
-                  textAlign: TextAlign.start,
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Container(
+                  color: Colors.white,
+                  width: 300,
+                  height: 80,
+                  child: Text(
+                    "QTDE: $qtde",
+                    style: TextStyle(fontSize: 30),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
               ElevatedButton(onPressed: _incqtde, child: Icon(Icons.add)),
             ],
+          ),
+          Container(
+            color: Colors.white,
+            width: 300,
+            height: 80,
+            child: Text(
+              "Valor total R\$: $qtde",
+              style: TextStyle(fontSize: 30),
+              textAlign: TextAlign.center,
+            ),
           ),
           ElevatedButton(onPressed: _printmsg, child: Text("Mensagem")),
         ],
