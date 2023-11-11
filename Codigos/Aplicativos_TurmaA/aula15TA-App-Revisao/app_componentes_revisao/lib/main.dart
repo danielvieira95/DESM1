@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
           ),
           body: Column(
             children: [
-              Componente("Resistor"),
+              Componente("Resistor", 2),
             ],
           )),
     );
@@ -24,9 +24,10 @@ class Home extends StatelessWidget {
 }
 
 class Componente extends StatefulWidget {
-  final String nome_c; // final antes do tipo da variavel
+  final String nome_c;
+  int vc; // final antes do tipo da variavel
   // protege contra alteração acidental
-  Componente(this.nome_c, {super.key});
+  Componente(this.nome_c, this.vc, {super.key});
 
   @override
   State<Componente> createState() => _ComponenteState();
@@ -51,6 +52,12 @@ class _ComponenteState extends State<Componente> {
     });
   }
 
+  void _calctotal() {
+    setState(() {
+      valor_total = qtde * widget.vc;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -69,7 +76,7 @@ class _ComponenteState extends State<Componente> {
             style: TextStyle(fontSize: 30),
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
@@ -93,12 +100,12 @@ class _ComponenteState extends State<Componente> {
             width: 300,
             height: 80,
             child: Text(
-              "Valor total R\$: $qtde",
+              "Valor total R\$: ${valor_total}",
               style: TextStyle(fontSize: 30),
               textAlign: TextAlign.center,
             ),
           ),
-          ElevatedButton(onPressed: _printmsg, child: Text("Mensagem")),
+          ElevatedButton(onPressed: _calctotal, child: Text("Total")),
         ],
       ),
     );
